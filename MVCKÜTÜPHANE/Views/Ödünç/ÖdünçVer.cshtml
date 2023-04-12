@@ -1,0 +1,30 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Hareket
+@{
+    ViewBag.Title = "ÖdünçVer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Ödün Kitap Sayfası </title>
+<h2>Ödünç Kitap Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <br />
+    <label> Üye ID</label>
+    @Html.TextBoxFor(x => x.AlanÜye, new { @class = "form-control" })
+    <br />
+    <label> Alınan Kitap </label>
+    @Html.TextBoxFor(x => x.AlınanKitap, new { @class = "form-control" })
+    <br />
+    <label> Personel </label>
+    @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })
+    <br />
+    <label> Alış Tarihi </label>
+    <input type="text" class="form-control" name="AlışTarihi" value="@DateTime.Now.ToShortDateString()"/>
+    <br />
+    <label> İade Tarihi </label>
+    <input type="text" class="form-control" name="İadeTarihi" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+    <br />
+    <button class="btn btn-outline-success" > Onayla </button>
+    <input type="hidden" value="False" name="İşlemDurum" />
+</form>
+
+

@@ -1,0 +1,37 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Hareket
+@{
+    ViewBag.Title = "Kitapİade";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Kitap İade Sayfası </title>
+<h2>Kitap İade Sayfası</h2>
+<br />
+@using (Html.BeginForm("İadeGüncelle", "Ödünç", FormMethod.Post))
+{
+    <div class="form-group">
+        <label> Hareket ID</label>
+        @Html.TextBoxFor(x => x.HareketID, new { @class = "form-control" })
+        <br />
+        <label> Kitap Adı:</label>
+        @Html.TextBoxFor(x => x.Tbl_Kitap.AD, new { @class = "form-control" })
+        <br />
+        <label> Üye Adı:</label>
+        @Html.TextBoxFor(x => x.Tbl_Üye.AD, new { @class = "form-control" })
+        <br />
+        <label> Personel Adı:</label>
+        @Html.TextBoxFor(x => x.Tbl_Personel.AD, new { @class = "form-control" })
+        <br />
+        <label> Alış Tarihi:</label>
+        @Html.TextBoxFor(x => x.AlışTarihi,"{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label> İade Tarihi:</label>
+        @Html.TextBoxFor(x => x.İadeTarihi,"{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label> Üyenin İade Tarihi</label>
+        <input type="text" class="form-control" name="ÜyeİadeTarihi" value="@DateTime.Now.ToShortDateString()" />
+        <br />
+        <button class="btn btn-default"> İade Al </button>
+        
+    </div>
+}
+

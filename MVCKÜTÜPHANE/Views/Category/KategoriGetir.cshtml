@@ -1,0 +1,25 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Category
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Kategori Güncelleme Sayfası </title>
+
+
+    <h2>Kategori Güncelleme Sayfası</h2>
+
+
+@using (Html.BeginForm("KategoriGüncelle", "Category", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label>Kategori ID</label>
+                    @Html.TextBoxFor(k=>k.CategoryID, new{ @class="Form-Control"})
+                    <br />
+                    <label>Kategori ADI</label>
+                    @Html.TextBoxFor(k=>k.AD, new { @class="Form-Control"})
+                </div>
+                <div>
+                    <button class="btn btn-outline-success" style="background-color:white">Güncelle</button>
+                </div>
+            }
+

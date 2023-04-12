@@ -1,0 +1,17 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Personel Ekleme Sayfası</title>
+
+    <h2>Personel Ekleme Sayfası</h2>
+<form class="form-group" method="post">
+    <div>
+        <label> Personel Adı</label>
+        @Html.TextBoxFor(p => p.AD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.AD,"", new { @style = "color:red" })
+        <br />
+        <button class="btn btn-outline-primary" style="background-color:white">Ekle</button>
+    </div>
+</form>

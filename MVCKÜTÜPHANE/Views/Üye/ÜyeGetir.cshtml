@@ -1,0 +1,41 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Üye
+@{
+    ViewBag.Title = "ÜyeGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Üye Güncelleme Sayfası</title>
+
+<h2>Üye Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("ÜyeGüncelle", "Üye", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.ÜyeID)
+        @Html.TextBoxFor(x => x.ÜyeID, new { @class = "form-control" })
+        <br />
+        <label> Üye Adı:</label>
+        @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+        <br />
+        <label> Üye Soyadı:</label>
+        @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+        <br />
+        <label> Mail:</label>
+        @Html.TextBoxFor(x => x.MAİL, new { @class = "form-control" })
+        <br />
+        <label> Kullanıcı Adı:</label>
+        @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
+        <br />
+        <label> Kullanıcı Şifre:</label>
+        @Html.TextBoxFor(x => x.ŞİFRE, new { @class = "form-control" })
+        <br />
+        <label> Foroğraf:</label>
+        @Html.TextBoxFor(x => x.FOTOĞRAF, new { @class = "form-control" })
+        <br />
+        <label> Telefon:</label>
+        @Html.TextBoxFor(x => x.TELEFON, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-outline-success"> Güncelle </button>
+    </div>
+}
+
+

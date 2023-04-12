@@ -1,0 +1,47 @@
+﻿@using MVCKÜTÜPHANE.Models.Entity
+@model List<Tbl_Yazar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title>Yazar Sayfası</title>
+
+    <h2>Yazarlar</h2>
+
+@using (Html.BeginForm("Index", "Yazar", FormMethod.Get))
+{
+    <div style="margin-bottom:15px;margin-top:15px">
+        <b>Aranacak Yazar Adı:</b> <br />@Html.TextBox("y")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+<br />
+<br />
+<br />
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Yazar ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>Detay</th>
+        <th>Sil</th>
+        <th> Güncelle</th>
+    </tr>
+    @foreach (var y in Model)
+    {
+        <tr>
+            <td>@y.YazarID</td>
+            <td>@y.AD</td>
+            <td>@y.SOYAD</td>
+            <td>@y.Detay</td>
+            <td><a href="/Yazar/YazarSil/@y.YazarID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Yazar/YazarGüncelle/@y.YazarID" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Yazar/YazarEkle/" class="btn btn-outline-primary">Yazar Ekle</a>
+

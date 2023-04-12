@@ -1,0 +1,22 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Category
+@{
+    ViewBag.Title = "YeniKategoriEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Kategori Ekleme Sayfası </title>
+
+<h2>Yeni Kategori Ekle</h2>
+<br />
+<form  class="form-group" method="post">
+
+    <div>
+        <label> Kategori ADI </label>
+        <input type="text"class="form-control" name="AD" />
+        @Html.ValidationMessageFor(x=>x.AD)
+    </div>
+    <div>
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+</form>
+

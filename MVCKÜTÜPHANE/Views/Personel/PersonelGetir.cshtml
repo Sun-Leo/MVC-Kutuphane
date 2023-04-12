@@ -1,0 +1,26 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Personel
+
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Personel Güncelleme Sayfası </title>
+<h2>Personel Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("PersonelGüncelle", "Personel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x=>x.PersonelID)
+        @Html.TextBoxFor(x => x.PersonelID, new { @class = "form-control" })
+        <br />
+        <label> Personel Adı:</label>
+        @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-outline-success"> Güncelle </button>
+    </div>
+}
+
+
+
+
+

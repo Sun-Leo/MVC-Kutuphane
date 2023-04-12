@@ -1,0 +1,38 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Üye
+@{
+    ViewBag.Title = "ÜyeEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Üye Ekleme Sayfası</title>
+
+<h2>Üye Ekleme Sayfası</h2>
+<form class="form-group" method="post">
+    <div>
+        <label> Üye Adı</label>
+        @Html.TextBoxFor(p => p.AD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.AD, "", new { @style = "color:red" })
+        <br />
+        <label> Üye Soyadı</label>
+        @Html.TextBoxFor(p => p.SOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.SOYAD)
+        <br />
+        <label> Üye Mail</label>
+        @Html.TextBoxFor(p => p.MAİL, new { @class = "form-control" })
+        <br />
+        <label> Kullanıcı Adı</label>
+        @Html.TextBoxFor(p => p.KULLANICIADI, new { @class = "form-control" })
+        <br />
+        <label> Kullanıcı Şifre</label>
+        @Html.TextBoxFor(p => p.ŞİFRE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.ŞİFRE, "", new { @style = "color:red" })
+        <br />
+        <label> Fotoğraf</label>
+        @Html.TextBoxFor(p => p.FOTOĞRAF, new { @class = "form-control" })
+        <br />
+        <label> Telefon </label>
+        @Html.TextBoxFor(p => p.TELEFON, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-outline-primary">Ekle</button>
+    </div>
+</form>
+

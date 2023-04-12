@@ -1,0 +1,133 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Abone
+
+@{
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Kütüphane</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/Template/Abstract10/css/base.css">
+    <link rel="stylesheet" href="~/Template/Abstract10/css/vendor.css">
+    <link rel="stylesheet" href="~/Template/Abstract10/css/main.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- script
+    ================================================== -->
+    <script src="~/Template/Abstract10/js/modernizr.js"></script>
+    <script src="~/Template/Abstract10/js/pace.min.js"></script>
+
+    <!-- favicons
+     ================================================== -->
+    <link rel="shortcut icon" href="~/Template/Abstract10/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/Template/Abstract10/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top">
+    <header class="short-header">
+
+        <div class="gradient-block"></div>
+
+        <div class="row header-content">
+
+            <div class="logo">
+                <a href="/VitrinMainPage/Index/">Anasayfa</a>
+            </div>
+
+            <nav id="main-nav-wrap">
+                <ul class="main-navigation sf-menu">
+                    <li class="current"><a href="/VitrinMainPage/Index/" title="">Anasayfa</a></li>
+                    <li class="has-children">
+                        <a href="category.html" title="">Kategoriler</a>
+                        <ul class="sub-menu">
+                            <li><a href="category.html">Macera</a></li>
+                            <li><a href="category.html">Bilim Kurgu</a></li>
+                            <li><a href="category.html">Roman</a></li>
+                            <li><a href="category.html">Hikaye</a></li>
+                            <li><a href="category.html">Tiyatro</a></li>
+                            <li><a href="category.html">Çocuk Kitapları</a></li>
+                            <li><a href="category.html">Şiir</a></li>
+                            <li><a href="category.html">Biyografi</a></li>
+                            <li><a href="category.html">Akademik</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="about.html" title="">Hakkımızda</a></li>
+                    <li><a href="/VitrinContact/Index/" title="">İletişim</a></li>
+                </ul>
+            </nav> <!-- end main-nav-wrap -->
+
+            <div class="search-wrap">
+
+                <form role="search" method="get" class="search-form" action="#">
+                    <label>
+                        <span class="hide-content">Arama Yap:</span>
+                        <input type="search" class="search-field" placeholder="Aranacak Kelime..." value="" name="s" title="Aranacak Kelime:" autocomplete="off">
+                    </label>
+                    <input type="submit" class="search-submit" value="Ara">
+                </form>
+
+                <a href="#" id="close-search" class="close-btn">Kapat</a>
+
+            </div> <!-- end search wrap -->
+
+            <div class="triggers">
+                <a class="search-trigger" href="#"><i class="fa fa-search"></i></a>
+                <a class="menu-toggle" href="#"><span>Menü</span></a>
+            </div> <!-- end triggers -->
+
+        </div>
+
+    </header>
+
+    <br />
+
+    <div style="text-align:center" class="subscribe-form">
+
+        <form method="post" class="form-control">
+
+            <label>Email Adresiniz:</label>
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+            <br />
+            <button class="btn btn-outline-dark">Abone Ol</button>
+
+
+        </form>
+
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="~/Template/Abstract10/js/jquery-2.1.3.min.js"></script>
+    <script src="~/Template/Abstract10/js/plugins.js"></script>
+    <script src="~/Template/Abstract10/js/jquery.appear.js"></script>
+    <script src="~/Template/Abstract10/js/main.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+

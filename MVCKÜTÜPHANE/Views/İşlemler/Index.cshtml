@@ -1,0 +1,36 @@
+﻿@model List<MVCKÜTÜPHANE.Models.Entity.Tbl_Hareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<title> İade Edilen Kitaplar Listesi </title>
+<h2> İade Edilen Kitaplar Listesi</h2>
+<br />
+<table class="table table-bordered" style="background-color:white">
+
+    <tr>
+        <th> İşlem ID</th>
+        <th>Kitap Adı</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Alış Tarihi</th>
+        <th>Üye İade Tarihi</th>
+       
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.HareketID</td>
+            <td>@item.Tbl_Kitap.AD</td>
+            <td>@item.Tbl_Üye.AD @item.Tbl_Üye.SOYAD</td>
+            <td>@item.Tbl_Personel.AD</td>
+            <td>@Convert.ToDateTime(item.AlışTarihi).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(item.ÜyeİadeTarihi).ToString("dd/MM/yyyy")</td>
+            
+        </tr>
+    }
+
+</table>
+<a href="/Ödünç/ÖdünçVer/" class="btn btn-outline-primary">Ödünç Kitap</a>
+

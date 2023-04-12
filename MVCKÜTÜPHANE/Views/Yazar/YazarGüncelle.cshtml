@@ -1,0 +1,29 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Yazar
+@{
+    ViewBag.Title = "YazarGüncelle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Yazar Güncelleme Sayfası </title>
+<div style="background-color:white">
+    <h2>Yazar Güncelleme Sayfası</h2>
+</div>
+<br />
+@using (Html.BeginForm("YazarGüncelle", "Yazar", FormMethod.Post))
+{
+    <label> Yazar ID</label>
+    @Html.TextBoxFor(x => x.YazarID, new { @class = "form-control" })
+    <br />
+    <label> Yazar AD</label>
+    @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+    <br />
+    <label> Yazar SOYAD</label>
+    @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+    <br />
+    <label> Yazar DETAY</label>
+    @Html.TextAreaFor(x => x.Detay, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+}
+
+
+

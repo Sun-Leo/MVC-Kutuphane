@@ -1,0 +1,33 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Kitap
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Kitap Ekleme Sayfası </title>
+
+<h2>Kitap Ekleme Sayfası</h2>
+<br />
+<form method="post">
+
+    <label>Kitap Adı</label>
+    @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+    <br />
+    <label>Kitap Kategori</label>
+   @Html.DropDownListFor(l=>l.Tbl_Category.CategoryID,(List<SelectListItem>)ViewBag.list1, new { @class="form-control"})
+    <br />
+    <label>Yazar</label>
+   @Html.DropDownListFor(ls=>ls.Tbl_Yazar.YazarID,(List<SelectListItem>)ViewBag.lst2, new { @class="form-control"})
+    <br />
+    <label>Basım Yılı</label>
+    @Html.TextBoxFor(k => k.BASIMYILI, new { @class = "form-control" })
+    <br />
+    <label>Yayın Evi</label>
+    @Html.TextBoxFor(k => k.YAYINEVİ, new { @class = "form-control" })
+    <br />
+    <label>Sayfa Sayısı</label>
+    @Html.TextBoxFor(k => k.SAYFA, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Kitap Ekle</button>
+   <input type="hidden" name="Durum" value="True" />
+</form>
+

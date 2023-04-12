@@ -1,0 +1,28 @@
+﻿@model MVCKÜTÜPHANE.Models.Entity.Tbl_Yazar
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Yazar Ekleme Sayfası </title>
+<h2>Yazar Ekle</h2>
+
+<form class="form-group" method="post">
+
+    <div>
+        <label> Yazar Adı:</label>
+        @Html.TextBoxFor(y => y.AD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.AD)
+        <br />
+        <label> Yazar Soyad:</label>
+        @Html.TextBoxFor(y => y.SOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.SOYAD)
+        <br />
+        <label> Yazar Detay Bilgiler</label>
+        @Html.TextAreaFor(y => y.Detay, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-outline-primary"> Yazar Kaydet </button>
+    </div>
+
+</form>
+
+

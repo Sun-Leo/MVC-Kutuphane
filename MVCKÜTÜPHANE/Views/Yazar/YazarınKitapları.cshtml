@@ -1,0 +1,35 @@
+﻿@model List<MVCKÜTÜPHANE.Models.Entity.Tbl_Kitap>
+@{
+    ViewBag.Title = "YazarınKitapları";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarın Kitapları</h2>
+<br />
+<br />
+<h3>@ViewBag.yzad</h3>
+<br />
+<br />
+<br />
+<br />
+
+<table class="table table-striped">
+    
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kategori</th>
+        <th>Yayınevi</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.KitapID</td>
+                    <td>@item.AD</td>
+                    <td>@item.Tbl_Category.AD</td>
+                    <td>@item.YAYINEVİ</td>
+                </tr>
+            }
+
+</table>
+

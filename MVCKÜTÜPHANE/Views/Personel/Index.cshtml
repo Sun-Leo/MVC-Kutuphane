@@ -1,0 +1,39 @@
+﻿@model List<MVCKÜTÜPHANE.Models.Entity.Tbl_Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title> Personel Sayfası</title>
+
+    <h2>Personel Sayfası</h2>
+
+@using (Html.BeginForm("Index", "Personel", FormMethod.Get))
+{
+    <div style="margin-bottom:15px;margin-top:15px">
+        <b>Aranacak Personel Adı:</b> <br /> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+<div style="background-color:white">
+    <table class="table table-bordered">
+        <tr>
+            <th> Personel ID</th>
+            <th> Personel ADI</th>
+            <th> SİL</th>
+            <th> GÜNCELLE</th>
+        </tr>
+        @foreach (var prs in Model)
+        {
+
+            <tr>
+                <td> @prs.PersonelID</td>
+                <td> @prs.AD</td>
+                <td><a href="/Personel/PersonelSil/ @prs.PersonelID" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Personel/PersonelGetir/ @prs.PersonelID" class="btn btn-outline-success">Güncelle</a></td>
+
+            </tr>
+        }
+
+    </table>
+</div>
+<a href="/Personel/PersonelEkle/" class="btn btn-outline-primary"> Yeni Personel Ekle</a>
